@@ -8,7 +8,8 @@ def index():
 
 @app.route('/cart')
 def cart():
-    return render_template("cart.html")
+    cr = add_product()
+    return render_template("cart.html", cart = cr)
 
 
 @app.route('/login')
@@ -19,6 +20,9 @@ def login():
 
 @app.route('/store')
 def store():
-    return render_template("store.html")
+    pr =  query_all()
+    return render_template("store.html", product = pr)
+
+
  
 app.run(debug = True)

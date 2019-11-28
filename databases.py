@@ -36,22 +36,28 @@ def delete_Product(their_ID):
 
 def query_all():
    products = session.query(
-      Product).all()
+   Product).all()
    return products
 
 
 def query_by_ID(their_ID):
-   	product = session.query(
+    product = session.query(
     Product).filter_by(
     ID=their_ID).first()
-   return product
+    return product
 
-
+query_all()
 
 
 
 def add_to_cart(productID):
     cart_object = Cart(
     productID=productID)
+    session.add(cart_object)
+    session.commit()
+
+def query_by_cartID():
+    cart_object = Cart(
+    cartID=cartID)
     session.add(cart_object)
     session.commit()

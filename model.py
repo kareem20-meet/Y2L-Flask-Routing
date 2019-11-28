@@ -17,6 +17,7 @@ class Product(Base):
 Base = declarative_base()
 class Cart(Base):
    __tablename__ = 'Cart'
+   cartID = Column (Integer,primary_key=True)
    productID = Column(Integer, primary_key=True)
 
 
