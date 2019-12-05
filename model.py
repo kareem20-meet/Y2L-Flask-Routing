@@ -4,15 +4,6 @@ from sqlalchemy.ext.declarative import declarative_base
 
 
 
-Base = declarative_base()
-class Product(Base):
-   __tablename__ = 'Product'
-   ID = Column(Integer, primary_key=True)
-   name = Column(String)
-   price = Column(String)
-   picture_link = Column(String)
-   description = Column(String)
-
 
 Base = declarative_base()
 class Cart(Base):
@@ -21,4 +12,12 @@ class Cart(Base):
    productID = Column(Integer, primary_key=True)
 
 
+
+class Product(Base):
+   __tablename__ = 'Product'
+   ID = Column(Integer, primary_key=True)
+   name = Column(String)
+   price = Column(String)
+   picture_link = Column(String)
+   description = Column(String)
 
